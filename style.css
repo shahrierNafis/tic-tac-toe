@@ -1,0 +1,14 @@
+.game-board {
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    width: 33vw;
+    aspect-ratio: 1/1;
+}
+
+.spot {
+    border: 1px black solid;
+}
+
+.spot span {
+    font-size: xx-large;
+}
