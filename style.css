@@ -1,14 +1,68 @@
+@font-face {
+    font-family: ComicNeue;
+    src: url(style/fonts/Comic_Neue/ComicNeue-Regular.ttf);
+  }
+body{
+    color: darkslategray;
+    font-family:ComicNeue ;
+    background-color: lightblue;
+
+}
 .game-board {
     display: grid;
     grid-template: repeat(3, 1fr)/repeat(3, 1fr);
-    width: 33vw;
+    height: 80vh;
+    margin: auto;
     aspect-ratio: 1/1;
 }
 
 .spot {
-    border: 1px black solid;
+    display: flex;
+    border: 5px darkslategray solid;
+    justify-content: center;
+    align-items: center;
 }
-
+[data-index="0"],[data-index="1"],[data-index="2"]{
+    border-top: none;
+}
+[data-index="0"],[data-index="3"],[data-index="6"]{
+    border-left: none;
+}
+[data-index="2"],[data-index="5"],[data-index="8"]{
+    border-right: none;
+}
+[data-index="6"],[data-index="7"],[data-index="8"]{
+    border-bottom: none;
+}
 .spot span {
-    font-size: xx-large;
+    font-size: max(10vw, 10vh);
+    flex-grow: 0;
+    color: inherit;
+}
+.clicked{
+    pointer-events: none
+}
+/* .winingSpot.player1{
+    color: lightblue;
+}
+.winingSpot.player2{
+    color: lightcoral;
+} */
+#player1{
+    font-size: 2rem;
+    /* background-color: lightblue; */
+    border: 1px transparent solid;
+    border-radius: 15%;
+}
+#player2{
+    font-size: 2rem;
+    /* background-color: lightcoral; */
+    border: 1px transparent solid;
+    border-radius: 15%;
+}
+.player1Win{
+    background-color: lightgreen;
+}
+.player2Win{
+    background-color: lightcoral;
 }
